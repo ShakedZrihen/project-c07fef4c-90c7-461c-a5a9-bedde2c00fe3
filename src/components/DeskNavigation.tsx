@@ -46,7 +46,6 @@ const TabContent = styled(Box)({
 
 const DeskIcon = styled(Box)({
   fontSize: '1.5rem',
-  marginLeft: '0.5rem',
 });
 
 const DeskName = styled(Box)(({ theme }) => ({
@@ -105,7 +104,10 @@ const DeskNavigation = ({ desks, activeDesk, onDeskChange, newsItems }: DeskNavi
               <Badge 
                 badgeContent={getItemCount('all')} 
                 color="primary"
-                sx={{ '& .MuiBadge-badge': { fontSize: '0.7rem' } }}
+                sx={{ 
+                  '& .MuiBadge-badge': { fontSize: '0.7rem' },
+                  marginRight: '0.5rem',
+                }}
               />
             </TabContent>
           }
@@ -122,7 +124,10 @@ const DeskNavigation = ({ desks, activeDesk, onDeskChange, newsItems }: DeskNavi
                   badgeContent={getUrgentCount(desk.id)}
                   color="error"
                   invisible={getUrgentCount(desk.id) === 0}
-                  sx={{ '& .MuiBadge-badge': { fontSize: '0.7rem' } }}
+                  sx={{ 
+                    '& .MuiBadge-badge': { fontSize: '0.7rem' },
+                    marginRight: '0.5rem',
+                  }}
                 />
               </TabContent>
             }
