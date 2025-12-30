@@ -106,7 +106,7 @@ const DeskNavigation = ({ desks, activeDesk, onDeskChange, newsItems }: DeskNavi
                 color="primary"
                 sx={{ 
                   '& .MuiBadge-badge': { fontSize: '0.7rem' },
-                  marginRight: '0.5rem',
+                  marginLeft: '0.5rem',
                 }}
               />
             </TabContent>
@@ -126,7 +126,7 @@ const DeskNavigation = ({ desks, activeDesk, onDeskChange, newsItems }: DeskNavi
                   invisible={getUrgentCount(desk.id) === 0}
                   sx={{ 
                     '& .MuiBadge-badge': { fontSize: '0.7rem' },
-                    marginRight: '0.5rem',
+                    marginLeft: '0.5rem',
                   }}
                 />
               </TabContent>
