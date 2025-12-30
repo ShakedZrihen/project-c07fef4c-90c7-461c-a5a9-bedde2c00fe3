@@ -12,8 +12,8 @@ const HeaderContainer = styled(Box)(({ theme }) => ({
   alignItems: 'center',
   justifyContent: 'space-between',
   padding: theme.spacing(2, 3),
-  background: 'linear-gradient(180deg, rgba(17, 24, 39, 0.98) 0%, rgba(17, 24, 39, 0.95) 100%)',
-  borderBottom: '1px solid rgba(255, 255, 255, 0.08)',
+  background: 'linear-gradient(180deg, #ffffff 0%, #f8fffe 100%)',
+  borderBottom: '1px solid rgba(43, 45, 66, 0.1)',
   backdropFilter: 'blur(10px)',
 }));
 

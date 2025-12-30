@@ -7,8 +7,8 @@ import { Desk, DeskType, NewsItem } from '../types/news';
 
 const NavContainer = styled(Box)(({ theme }) => ({
   padding: theme.spacing(0, 2),
-  background: 'rgba(17, 24, 39, 0.6)',
-  borderBottom: '1px solid rgba(255, 255, 255, 0.06)',
+  background: 'rgba(255, 255, 255, 0.8)',
+  borderBottom: '1px solid rgba(43, 45, 66, 0.08)',
 }));
 
 const StyledTabs = styled(Tabs)({
@@ -30,11 +30,11 @@ const StyledTab = styled(Tab, {
   padding: theme.spacing(1.5, 3),
   transition: 'all 0.2s ease',
   '&.Mui-selected': {
-    background: `linear-gradient(180deg, ${deskColor}20 0%, transparent 100%)`,
+    background: `linear-gradient(180deg, ${deskColor}15 0%, transparent 100%)`,
     borderBottom: `3px solid ${deskColor}`,
   },
   '&:hover': {
-    background: 'rgba(255, 255, 255, 0.05)',
+    background: 'rgba(43, 45, 66, 0.05)',
   },
 }));
 

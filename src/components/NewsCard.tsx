@@ -24,22 +24,23 @@ const StyledCard = styled(Card, {
     prop !== 'isSelected' && prop !== 'deskColor' && prop !== 'hasMatch',
 })<StyledCardProps>(({ theme, isSelected, deskColor, hasMatch }) => ({
   background: isSelected 
-    ? `linear-gradient(135deg, ${deskColor}15 0%, ${theme.palette.background.paper} 100%)`
+    ? `linear-gradient(135deg, ${deskColor}10 0%, ${theme.palette.background.paper} 100%)`
     : theme.palette.background.paper,
   border: isSelected 
     ? `2px solid ${deskColor}` 
     : hasMatch 
       ? `2px solid ${theme.palette.warning.main}`
-      : '1px solid rgba(255, 255, 255, 0.08)',
+      : '1px solid rgba(43, 45, 66, 0.1)',
   borderRadius: 12,
   transition: 'all 0.2s ease',
   cursor: 'pointer',
   position: 'relative',
   overflow: 'visible',
+  boxShadow: '0 2px 8px rgba(43, 45, 66, 0.06)',
   '&:hover': {
     transform: 'translateY(-2px)',
-    boxShadow: `0 8px 24px rgba(0, 0, 0, 0.3)`,
-    borderColor: isSelected ? deskColor : 'rgba(255, 255, 255, 0.15)',
+    boxShadow: '0 8px 24px rgba(43, 45, 66, 0.12)',
+    borderColor: isSelected ? deskColor : 'rgba(43, 45, 66, 0.2)',
   },
 }));
 
@@ -118,14 +119,14 @@ const TagChip = styled(Chip, {
   fontSize: '0.7rem',
   fontWeight: 500,
   background: isUrgent 
-    ? `${theme.palette.error.main}20`
-    : 'rgba(255, 255, 255, 0.08)',
+    ? `${theme.palette.error.main}15`
+    : 'rgba(43, 45, 66, 0.08)',
   color: isUrgent 
     ? theme.palette.error.main 
     : theme.palette.text.secondary,
   border: isUrgent 
     ? `1px solid ${theme.palette.error.main}40`
-    : '1px solid rgba(255, 255, 255, 0.08)',
+    : '1px solid rgba(43, 45, 66, 0.1)',
 }));
 
 const MatchIndicator = styled(Box)(({ theme }) => ({

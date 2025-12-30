@@ -14,7 +14,7 @@ import { NewsItem, DeskType, Tag } from '../types/news';
 
 const DashboardContainer = styled(Box)({
   minHeight: '100vh',
-  background: 'linear-gradient(180deg, #0a0f1a 0%, #111827 100%)',
+  background: 'linear-gradient(180deg, #f1fffa 0%, #e8fff5 100%)',
   display: 'flex',
   flexDirection: 'column',
 });
@@ -31,18 +31,20 @@ const FeedSection = styled(Box)(({ theme }) => ({
   flex: 1,
   display: 'flex',
   flexDirection: 'column',
-  background: 'rgba(17, 24, 39, 0.5)',
+  background: 'rgba(255, 255, 255, 0.7)',
   borderRadius: 12,
-  border: '1px solid rgba(255, 255, 255, 0.06)',
+  border: '1px solid rgba(43, 45, 66, 0.08)',
   overflow: 'hidden',
+  boxShadow: '0 2px 12px rgba(43, 45, 66, 0.06)',
 }));
 
 const FeedHeader = styled(Box)(({ theme }) => ({
   padding: theme.spacing(2),
-  borderBottom: '1px solid rgba(255, 255, 255, 0.06)',
+  borderBottom: '1px solid rgba(43, 45, 66, 0.08)',
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'space-between',
+  background: 'rgba(255, 255, 255, 0.5)',
 }));
 
 const FeedContent = styled(Box)({
@@ -52,13 +54,13 @@ const FeedContent = styled(Box)({
     width: 8,
   },
   '&::-webkit-scrollbar-track': {
-    background: 'rgba(255, 255, 255, 0.02)',
+    background: 'rgba(43, 45, 66, 0.03)',
   },
   '&::-webkit-scrollbar-thumb': {
-    background: 'rgba(255, 255, 255, 0.1)',
+    background: 'rgba(43, 45, 66, 0.15)',
     borderRadius: 4,
     '&:hover': {
-      background: 'rgba(255, 255, 255, 0.15)',
+      background: 'rgba(43, 45, 66, 0.25)',
     },
   },
 });
@@ -73,7 +75,7 @@ const SidePanel = styled(Box)(({ theme }) => ({
     width: 6,
   },
   '&::-webkit-scrollbar-thumb': {
-    background: 'rgba(255, 255, 255, 0.1)',
+    background: 'rgba(43, 45, 66, 0.15)',
     borderRadius: 3,
   },
 }));

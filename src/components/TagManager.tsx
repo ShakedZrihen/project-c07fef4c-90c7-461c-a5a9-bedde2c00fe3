@@ -14,7 +14,8 @@ const PanelContainer = styled(Paper)(({ theme }) => ({
   padding: theme.spacing(2),
   background: theme.palette.background.paper,
   borderRadius: 12,
-  border: '1px solid rgba(255, 255, 255, 0.08)',
+  border: '1px solid rgba(43, 45, 66, 0.1)',
+  boxShadow: '0 2px 8px rgba(43, 45, 66, 0.06)',
 }));
 
 const SectionTitle = styled(Typography)(({ theme }) => ({
@@ -37,7 +38,7 @@ const StyledTextField = styled(TextField)({
   flex: 1,
   '& .MuiOutlinedInput-root': {
     borderRadius: 8,
-    background: 'rgba(255, 255, 255, 0.03)',
+    background: 'rgba(43, 45, 66, 0.03)',
     '& input': {
       padding: '10px 14px',
     },
@@ -71,11 +72,11 @@ const TagChip = styled(Chip, {
   fontWeight: 500,
   cursor: 'pointer',
   transition: 'all 0.2s ease',
-  background: isSelected ? `${tagColor}30` : 'rgba(255, 255, 255, 0.05)',
+  background: isSelected ? `${tagColor}25` : 'rgba(43, 45, 66, 0.06)',
   color: isSelected ? tagColor : 'inherit',
-  border: isSelected ? `2px solid ${tagColor}` : '1px solid rgba(255, 255, 255, 0.1)',
+  border: isSelected ? `2px solid ${tagColor}` : '1px solid rgba(43, 45, 66, 0.15)',
   '&:hover': {
-    background: `${tagColor}20`,
+    background: `${tagColor}15`,
     borderColor: tagColor,
   },
 }));
