@@ -46,6 +46,7 @@ const TabContent = styled(Box)({
 
 const DeskIcon = styled(Box)({
   fontSize: '1.5rem',
+  marginLeft: '0.5rem',
 });
 
 const DeskName = styled(Box)(({ theme }) => ({
