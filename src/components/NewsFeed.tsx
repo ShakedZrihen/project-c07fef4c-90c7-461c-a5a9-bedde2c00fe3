@@ -24,10 +24,11 @@ interface NewsFeedProps {
   items: NewsItem[];
   onSelectItem: (id: string) => void;
   onOpenNotes: (item: NewsItem) => void;
+  onOpenDetail: (item: NewsItem) => void;
   filterKeywords: string[];
 }
 
-const NewsFeed = ({ items, onSelectItem, onOpenNotes, filterKeywords }: NewsFeedProps) => {
+const NewsFeed = ({ items, onSelectItem, onOpenNotes, onOpenDetail, filterKeywords }: NewsFeedProps) => {
   const getMatchingKeywords = (item: NewsItem): string[] => {
     if (filterKeywords.length === 0) return [];
     
@@ -55,6 +56,7 @@ const NewsFeed = ({ items, onSelectItem, onOpenNotes, filterKeywords }: NewsFeed
           item={item}
           onSelect={onSelectItem}
           onOpenNotes={onOpenNotes}
+          onOpenDetail={onOpenDetail}
           matchingKeywords={getMatchingKeywords(item)}
         />
       ))}

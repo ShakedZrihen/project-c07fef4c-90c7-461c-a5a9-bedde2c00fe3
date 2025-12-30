@@ -9,6 +9,7 @@ import FilterPanel from './FilterPanel';
 import TagManager from './TagManager';
 import SummaryPanel from './SummaryPanel';
 import NotesDialog from './NotesDialog';
+import PostDetailPanel from './PostDetailPanel';
 import { desks, generateMockNews, initialTags } from '../data/mockData';
 import { NewsItem, DeskType, Tag } from '../types/news';
 
@@ -88,6 +89,7 @@ const Dashboard = () => {
   const [selectedTags, setSelectedTags] = useState<string[]>([]);
   const [notesDialogOpen, setNotesDialogOpen] = useState(false);
   const [editingItem, setEditingItem] = useState<NewsItem | null>(null);
+  const [detailItem, setDetailItem] = useState<NewsItem | null>(null);
   const [summary, setSummary] = useState('');
 
   const filteredItems = useMemo(() => {
@@ -137,6 +139,18 @@ const Dashboard = () => {
     setNewsItems(prev => prev.map(item =>
       item.id === itemId ? { ...item, notes, tags: itemTags } : item
     ));
+    // Update detail item if it's the same one
+    if (detailItem && detailItem.id === itemId) {
+      setDetailItem(prev => prev ? { ...prev, notes, tags: itemTags } : null);
+    }
+  };
+
+  const handleOpenDetail = (item: NewsItem) => {
+    setDetailItem(item);
+  };
+
+  const handleCloseDetail = () => {
+    setDetailItem(null);
   };
 
   const handleAddKeyword = (keyword: string) => {
@@ -213,31 +227,40 @@ const Dashboard = () => {
               items={filteredItems}
               onSelectItem={handleSelectItem}
               onOpenNotes={handleOpenNotes}
+              onOpenDetail={handleOpenDetail}
               filterKeywords={keywords}
             />
           </FeedContent>
         </FeedSection>
 
-        <SidePanel>
-          <FilterPanel
-            keywords={keywords}
-            onAddKeyword={handleAddKeyword}
-            onRemoveKeyword={handleRemoveKeyword}
+        {detailItem ? (
+          <PostDetailPanel
+            item={detailItem}
+            onClose={handleCloseDetail}
+            onOpenNotes={handleOpenNotes}
           />
-          <TagManager
-            tags={tags}
-            selectedTags={selectedTags}
-            onAddTag={handleAddTag}
-            onToggleTag={handleToggleTag}
-            onDeleteTag={handleDeleteTag}
-          />
-          <SummaryPanel
-            selectedItems={selectedItems}
-            onGenerateSummary={handleGenerateSummary}
-            onClearSelection={handleClearSelection}
-            summary={summary}
-          />
-        </SidePanel>
+        ) : (
+          <SidePanel>
+            <FilterPanel
+              keywords={keywords}
+              onAddKeyword={handleAddKeyword}
+              onRemoveKeyword={handleRemoveKeyword}
+            />
+            <TagManager
+              tags={tags}
+              selectedTags={selectedTags}
+              onAddTag={handleAddTag}
+              onToggleTag={handleToggleTag}
+              onDeleteTag={handleDeleteTag}
+            />
+            <SummaryPanel
+              selectedItems={selectedItems}
+              onGenerateSummary={handleGenerateSummary}
+              onClearSelection={handleClearSelection}
+              summary={summary}
+            />
+          </SidePanel>
+        )}
       </MainContent>
 
       <NotesDialog

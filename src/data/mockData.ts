@@ -1,4 +1,4 @@
-import { NewsItem, Desk, Tag, DeskType } from '../types/news';
+import { NewsItem, Desk, Tag, DeskType, MediaItem } from '../types/news';
 
 export const desks: Desk[] = [
   { id: 'iran', name: 'איראן', icon: '🇮🇷', color: '#00BFA5' },
@@ -24,19 +24,28 @@ export const generateMockNews = (): NewsItem[] => {
     // Iran
     {
       title: 'מחאות נמשכות בטהראן על רקע המשבר הכלכלי',
-      content: 'אלפי מפגינים יצאו לרחובות טהראן במחאה על יוקר המחיה והמשבר הכלכלי המתמשך. כוחות הביטחון נפרסו ברחבי העיר.',
+      content: 'אלפי מפגינים יצאו לרחובות טהראן במחאה על יוקר המחיה והמשבר הכלכלי המתמשך. כוחות הביטחון נפרסו ברחבי העיר. המשטרה עשתה שימוש בגז מדמיע לפיזור ההפגנות. עדים מדווחים על מעצרים המוניים באזורים שונים של הבירה.',
       source: 'רשתות חברתיות - איראן',
       timestamp: new Date(Date.now() - 1000 * 60 * 30),
       desk: 'iran',
       tags: ['דחוף', 'חברתי'],
+      author: 'כתב מיוחד',
+      originalUrl: 'https://example.com/iran-protests',
+      media: [
+        { type: 'image', url: 'https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=640', title: 'הפגנה בטהראן' },
+        { type: 'video', url: 'https://example.com/video1.mp4', title: 'וידאו מהמחאה' },
+      ],
     },
     {
       title: 'דיווחים על פיצוצים באזור איספהאן',
-      content: 'עדים מדווחים על פיצוצים עזים באזור מתקן הגרעין באיספהאן. הרשויות האיראניות טרם הגיבו לדיווחים.',
+      content: 'עדים מדווחים על פיצוצים עזים באזור מתקן הגרעין באיספהאן. הרשויות האיראניות טרם הגיבו לדיווחים. גורמים מודיעיניים מעריכים כי מדובר בתקיפה ממוקדת.',
       source: 'סוכנות פארס',
       timestamp: new Date(Date.now() - 1000 * 60 * 45),
       desk: 'iran',
       tags: ['דחוף', 'צבאי'],
+      media: [
+        { type: 'image', url: 'https://images.unsplash.com/photo-1569025690938-a00729c9e1f9?w=640', title: 'אזור איספהאן' },
+      ],
     },
     {
       title: 'ח\'מינאי נואם על "עמידות המשטר" מול הלחצים',
@@ -74,11 +83,15 @@ export const generateMockNews = (): NewsItem[] => {
     // Lebanon
     {
       title: 'חיזבאללה מכריז על כוננות מוגברת בגבול',
-      content: 'נסראללה הורה על כוננות מלאה של כוחות חיזבאללה לאורך הגבול עם ישראל בעקבות מתיחות גוברת.',
+      content: 'נסראללה הורה על כוננות מלאה של כוחות חיזבאללה לאורך הגבול עם ישראל בעקבות מתיחות גוברת. הארגון פרסם הודעה רשמית בערוץ הטלגרם שלו.',
       source: 'אל-מנאר',
       timestamp: new Date(Date.now() - 1000 * 60 * 90),
       desk: 'lebanon',
       tags: ['צבאי', 'דחוף'],
+      media: [
+        { type: 'video', url: 'https://example.com/hezbollah.mp4', title: 'הודעת חיזבאללה' },
+        { type: 'document', url: 'https://example.com/statement.pdf', title: 'הצהרה רשמית' },
+      ],
     },
     {
       title: 'משבר הדלק בלבנון מחריף - תורים ארוכים בתחנות',
@@ -124,11 +137,16 @@ export const generateMockNews = (): NewsItem[] => {
     // Gaza
     {
       title: 'הפצצות כבדות דווחו מרצועת עזה',
-      content: 'תושבי הרצועה מדווחים על הפצצות כבדות במרכז עזה. משרד הבריאות מדווח על עשרות נפגעים.',
+      content: 'תושבי הרצועה מדווחים על הפצצות כבדות במרכז עזה. משרד הבריאות מדווח על עשרות נפגעים. צוותי חילוץ פועלים בשטח להוצאת לכודים.',
       source: 'רשתות חברתיות - עזה',
       timestamp: new Date(Date.now() - 1000 * 60 * 15),
       desk: 'gaza',
       tags: ['דחוף', 'צבאי', 'הומניטרי'],
+      media: [
+        { type: 'image', url: 'https://images.unsplash.com/photo-1542744173-8659f582f2b2?w=640', title: 'תיעוד מהשטח' },
+        { type: 'image', url: 'https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=640', title: 'צילום נוסף' },
+        { type: 'video', url: 'https://example.com/gaza.mp4', title: 'וידאו מעזה' },
+      ],
     },
     {
       title: 'שיירת סיוע הומניטרי נכנסה דרך מעבר רפיח',
