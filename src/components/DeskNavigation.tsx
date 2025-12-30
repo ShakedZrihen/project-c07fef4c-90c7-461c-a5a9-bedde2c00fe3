@@ -41,7 +41,7 @@ const StyledTab = styled(Tab, {
 const TabContent = styled(Box)({
   display: 'flex',
   alignItems: 'center',
-  gap: 12,
+  gap: '0.5rem',
 });
 
 const DeskIcon = styled(Box)({
