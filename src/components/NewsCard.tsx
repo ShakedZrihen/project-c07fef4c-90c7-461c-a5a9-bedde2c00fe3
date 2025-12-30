@@ -39,7 +39,6 @@ const StyledCard = styled(Card, {
   boxShadow: '0 2px 8px rgba(43, 45, 66, 0.06)',
   '&:hover': {
     transform: 'translateY(-2px)',
-    boxShadow: '0 8px 24px rgba(43, 45, 66, 0.12)',
     borderColor: isSelected ? deskColor : 'rgba(43, 45, 66, 0.2)',
   },
 }));
