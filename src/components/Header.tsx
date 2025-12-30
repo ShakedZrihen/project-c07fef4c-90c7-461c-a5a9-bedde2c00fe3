@@ -42,10 +42,7 @@ const TitleSection = styled(Box)({
 const MainTitle = styled(Typography)(({ theme }) => ({
   fontWeight: 700,
   fontSize: '1.5rem',
-  background: `linear-gradient(135deg, ${theme.palette.primary.light} 0%, ${theme.palette.primary.main} 100%)`,
-  WebkitBackgroundClip: 'text',
-  WebkitTextFillColor: 'transparent',
-  backgroundClip: 'text',
+  color: theme.palette.primary.main,
 }));
 
 const SubTitle = styled(Typography)(({ theme }) => ({
@@ -63,7 +60,7 @@ const StyledIconButton = styled(IconButton)(({ theme }) => ({
   color: theme.palette.text.secondary,
   '&:hover': {
     color: theme.palette.primary.main,
-    background: 'rgba(0, 191, 165, 0.1)',
+    background: 'rgba(43, 45, 66, 0.08)',
   },
 }));
 

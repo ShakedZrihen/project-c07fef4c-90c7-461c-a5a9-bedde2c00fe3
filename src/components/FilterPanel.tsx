@@ -63,7 +63,7 @@ const ChipsContainer = styled(Box)(({ theme }) => ({
 const KeywordChip = styled(Chip)(({ theme }) => ({
   borderRadius: 6,
   fontWeight: 500,
-  background: 'rgba(0, 191, 165, 0.15)',
+  background: 'rgba(43, 45, 66, 0.1)',
   color: theme.palette.primary.main,
   border: `1px solid ${theme.palette.primary.main}40`,
   '& .MuiChip-deleteIcon': {

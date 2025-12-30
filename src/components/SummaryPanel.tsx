@@ -28,7 +28,7 @@ const SectionTitle = styled(Typography)(({ theme }) => ({
 }));
 
 const SelectedCount = styled(Chip)(({ theme }) => ({
-  background: `${theme.palette.primary.main}20`,
+  background: `${theme.palette.primary.main}15`,
   color: theme.palette.primary.main,
   fontWeight: 600,
   marginRight: theme.spacing(1),
@@ -74,9 +74,9 @@ const ActionButton = styled(Button)(({ theme }) => ({
 const SummaryOutput = styled(Box)(({ theme }) => ({
   marginTop: theme.spacing(2),
   padding: theme.spacing(2),
-  background: 'rgba(0, 191, 165, 0.08)',
+  background: 'rgba(43, 45, 66, 0.06)',
   borderRadius: 8,
-  border: `1px solid ${theme.palette.primary.main}30`,
+  border: `1px solid ${theme.palette.primary.main}25`,
 }));
 
 interface SummaryPanelProps {
