@@ -5,9 +5,9 @@ const rtlTheme = createTheme({
   palette: {
     mode: 'light',
     primary: {
-      main: '#00BFA5',
-      light: '#5df2d6',
-      dark: '#008e76',
+      main: '#2b2d42',
+      light: '#4a4d66',
+      dark: '#1a1b29',
       contrastText: '#ffffff',
     },
     secondary: {
