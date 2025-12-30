@@ -1,3 +1,10 @@
+export interface MediaItem {
+  type: 'image' | 'video' | 'document';
+  url: string;
+  thumbnail?: string;
+  title?: string;
+}
+
 export interface NewsItem {
   id: string;
   title: string;
@@ -9,6 +16,9 @@ export interface NewsItem {
   notes: string;
   isSelected: boolean;
   keywords: string[];
+  media?: MediaItem[];
+  author?: string;
+  originalUrl?: string;
 }
 
 export type DeskType = 'iran' | 'syria' | 'lebanon' | 'egypt' | 'gaza';

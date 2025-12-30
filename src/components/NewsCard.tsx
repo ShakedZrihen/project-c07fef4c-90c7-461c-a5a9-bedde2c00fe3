@@ -10,6 +10,9 @@ import Tooltip from '@mui/material/Tooltip';
 import EditNoteIcon from '@mui/icons-material/EditNote';
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
 import SourceIcon from '@mui/icons-material/Source';
+import ImageIcon from '@mui/icons-material/Image';
+import VideoLibraryIcon from '@mui/icons-material/VideoLibrary';
+import DescriptionIcon from '@mui/icons-material/Description';
 import { NewsItem, DeskType } from '../types/news';
 import { deskColors, desks } from '../data/mockData';
 
@@ -160,14 +163,33 @@ const NotesIndicator = styled(Box)(({ theme }) => ({
   marginTop: theme.spacing(1),
 }));
 
+const MediaIndicator = styled(Box)(({ theme }) => ({
+  display: 'flex',
+  alignItems: 'center',
+  gap: theme.spacing(1),
+  padding: theme.spacing(0.75, 1),
+  background: 'rgba(43, 45, 66, 0.05)',
+  borderRadius: 6,
+  marginTop: theme.spacing(1),
+}));
+
+const MediaBadge = styled(Box)(({ theme }) => ({
+  display: 'flex',
+  alignItems: 'center',
+  gap: theme.spacing(0.5),
+  fontSize: '0.7rem',
+  color: theme.palette.text.secondary,
+}));
+
 interface NewsCardProps {
   item: NewsItem;
   onSelect: (id: string) => void;
   onOpenNotes: (item: NewsItem) => void;
+  onOpenDetail: (item: NewsItem) => void;
   matchingKeywords: string[];
 }
 
-const NewsCard = ({ item, onSelect, onOpenNotes, matchingKeywords }: NewsCardProps) => {
+const NewsCard = ({ item, onSelect, onOpenNotes, onOpenDetail, matchingKeywords }: NewsCardProps) => {
   const deskInfo = desks.find(d => d.id === item.desk);
   const deskColor = deskColors[item.desk as DeskType];
   const hasMatch = matchingKeywords.length > 0;
@@ -196,11 +218,26 @@ const NewsCard = ({ item, onSelect, onOpenNotes, matchingKeywords }: NewsCardPro
     return result;
   };
 
+  const getMediaCounts = () => {
+    if (!item.media) return null;
+    const images = item.media.filter(m => m.type === 'image').length;
+    const videos = item.media.filter(m => m.type === 'video').length;
+    const docs = item.media.filter(m => m.type === 'document').length;
+    return { images, videos, docs };
+  };
+
+  const mediaCounts = getMediaCounts();
+
+  const handleCardClick = () => {
+    onOpenDetail(item);
+  };
+
   return (
     <StyledCard 
       isSelected={item.isSelected} 
       deskColor={deskColor}
       hasMatch={hasMatch}
+      onClick={handleCardClick}
     >
       <DeskIndicator color={deskColor} />
       
@@ -240,7 +277,7 @@ const NewsCard = ({ item, onSelect, onOpenNotes, matchingKeywords }: NewsCardPro
               onChange={() => onSelect(item.id)}
               onClick={(e) => e.stopPropagation()}
               sx={{
-                color: 'rgba(255,255,255,0.3)',
+                color: 'rgba(43, 45, 66, 0.3)',
                 '&.Mui-checked': { color: deskColor },
               }}
             />
@@ -259,6 +296,29 @@ const NewsCard = ({ item, onSelect, onOpenNotes, matchingKeywords }: NewsCardPro
         </MetaInfo>
 
         <Content>{highlightContent(item.content)}</Content>
+
+        {mediaCounts && (mediaCounts.images > 0 || mediaCounts.videos > 0 || mediaCounts.docs > 0) && (
+          <MediaIndicator>
+            {mediaCounts.images > 0 && (
+              <MediaBadge>
+                <ImageIcon sx={{ fontSize: 16 }} />
+                {mediaCounts.images}
+              </MediaBadge>
+            )}
+            {mediaCounts.videos > 0 && (
+              <MediaBadge>
+                <VideoLibraryIcon sx={{ fontSize: 16 }} />
+                {mediaCounts.videos}
+              </MediaBadge>
+            )}
+            {mediaCounts.docs > 0 && (
+              <MediaBadge>
+                <DescriptionIcon sx={{ fontSize: 16 }} />
+                {mediaCounts.docs}
+              </MediaBadge>
+            )}
+          </MediaIndicator>
+        )}
 
         {item.notes && (
           <NotesIndicator>
