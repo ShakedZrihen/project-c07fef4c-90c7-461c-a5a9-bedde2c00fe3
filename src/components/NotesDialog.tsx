@@ -17,9 +17,10 @@ const StyledDialog = styled(Dialog)(({ theme }) => ({
   '& .MuiDialog-paper': {
     background: theme.palette.background.paper,
     borderRadius: 16,
-    border: '1px solid rgba(255, 255, 255, 0.1)',
+    border: '1px solid rgba(43, 45, 66, 0.1)',
     minWidth: 500,
     maxWidth: 600,
+    boxShadow: '0 20px 40px rgba(43, 45, 66, 0.15)',
   },
 }));
 
@@ -32,11 +33,11 @@ const StyledDialogTitle = styled(DialogTitle)(({ theme }) => ({
 }));
 
 const ItemPreview = styled(Box)(({ theme }) => ({
-  background: 'rgba(255, 255, 255, 0.03)',
+  background: 'rgba(43, 45, 66, 0.04)',
   borderRadius: 8,
   padding: theme.spacing(2),
   marginBottom: theme.spacing(3),
-  border: '1px solid rgba(255, 255, 255, 0.06)',
+  border: '1px solid rgba(43, 45, 66, 0.08)',
 }));
 
 const TagsSection = styled(Box)(({ theme }) => ({
@@ -66,18 +67,18 @@ const TagChip = styled(Chip, {
 })<TagChipProps>(({ tagColor, isActive }) => ({
   cursor: 'pointer',
   transition: 'all 0.2s ease',
-  background: isActive ? `${tagColor}30` : 'rgba(255, 255, 255, 0.05)',
+  background: isActive ? `${tagColor}20` : 'rgba(43, 45, 66, 0.06)',
   color: isActive ? tagColor : 'inherit',
-  border: isActive ? `2px solid ${tagColor}` : '1px solid rgba(255, 255, 255, 0.1)',
+  border: isActive ? `2px solid ${tagColor}` : '1px solid rgba(43, 45, 66, 0.12)',
   '&:hover': {
-    background: `${tagColor}20`,
+    background: `${tagColor}15`,
   },
 }));
 
 const NotesField = styled(TextField)(({ theme }) => ({
   '& .MuiOutlinedInput-root': {
     borderRadius: 8,
-    background: 'rgba(255, 255, 255, 0.03)',
+    background: 'rgba(43, 45, 66, 0.03)',
   },
 }));
 

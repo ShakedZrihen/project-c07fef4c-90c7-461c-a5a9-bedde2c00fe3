@@ -13,7 +13,8 @@ const PanelContainer = styled(Paper)(({ theme }) => ({
   padding: theme.spacing(2),
   background: theme.palette.background.paper,
   borderRadius: 12,
-  border: '1px solid rgba(255, 255, 255, 0.08)',
+  border: '1px solid rgba(43, 45, 66, 0.1)',
+  boxShadow: '0 2px 8px rgba(43, 45, 66, 0.06)',
 }));
 
 const SectionTitle = styled(Typography)(({ theme }) => ({
@@ -54,7 +55,7 @@ const SelectedItem = styled(Box)(({ theme }) => ({
   alignItems: 'center',
   gap: theme.spacing(1),
   padding: theme.spacing(1),
-  background: 'rgba(255, 255, 255, 0.03)',
+  background: 'rgba(43, 45, 66, 0.04)',
   borderRadius: 6,
   fontSize: '0.8rem',
 }));

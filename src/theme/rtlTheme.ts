@@ -3,26 +3,26 @@ import { createTheme } from '@mui/material/styles';
 const rtlTheme = createTheme({
   direction: 'rtl',
   palette: {
-    mode: 'dark',
+    mode: 'light',
     primary: {
       main: '#00BFA5',
       light: '#5df2d6',
       dark: '#008e76',
-      contrastText: '#000000',
+      contrastText: '#ffffff',
     },
     secondary: {
       main: '#FF6B35',
       light: '#ff9d64',
       dark: '#c53a00',
-      contrastText: '#000000',
+      contrastText: '#ffffff',
     },
     background: {
-      default: '#0a0f1a',
-      paper: '#111827',
+      default: '#f1fffa',
+      paper: '#ffffff',
     },
     text: {
-      primary: '#e5e7eb',
-      secondary: '#9ca3af',
+      primary: '#2b2d42',
+      secondary: '#5a5d75',
     },
     error: {
       main: '#ef4444',
@@ -36,7 +36,7 @@ const rtlTheme = createTheme({
     info: {
       main: '#3b82f6',
     },
-    divider: 'rgba(255, 255, 255, 0.08)',
+    divider: 'rgba(43, 45, 66, 0.12)',
   },
   typography: {
     fontFamily: '"Heebo", "Rubik", "Arial", sans-serif',
@@ -99,7 +99,7 @@ const rtlTheme = createTheme({
       styleOverrides: {
         root: {
           backgroundImage: 'none',
-          border: '1px solid rgba(255, 255, 255, 0.08)',
+          border: '1px solid rgba(43, 45, 66, 0.12)',
         },
       },
     },
@@ -122,10 +122,10 @@ const rtlTheme = createTheme({
         root: {
           '& .MuiOutlinedInput-root': {
             '& fieldset': {
-              borderColor: 'rgba(255, 255, 255, 0.15)',
+              borderColor: 'rgba(43, 45, 66, 0.2)',
             },
             '&:hover fieldset': {
-              borderColor: 'rgba(255, 255, 255, 0.25)',
+              borderColor: 'rgba(43, 45, 66, 0.35)',
             },
           },
         },
