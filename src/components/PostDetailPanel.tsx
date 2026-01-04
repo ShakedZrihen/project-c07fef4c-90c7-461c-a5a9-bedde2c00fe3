@@ -20,7 +20,9 @@ import { deskColors, desks } from '../data/mockData';
 
 const PanelContainer = styled(Box)(({ theme }) => ({
   width: 420,
-  height: '100%',
+  maxHeight: 'calc(100vh - 180px)',
+  position: 'sticky',
+  top: theme.spacing(2),
   background: theme.palette.background.paper,
   borderRadius: 12,
   border: '1px solid rgba(43, 45, 66, 0.1)',
