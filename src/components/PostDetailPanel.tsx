@@ -19,7 +19,7 @@ import { NewsItem, DeskType } from '../types/news';
 import { deskColors, desks } from '../data/mockData';
 
 const PanelContainer = styled(Box)(({ theme }) => ({
-  width: 420,
+  width: '45%',
   maxHeight: 'calc(100vh - 180px)',
   position: 'sticky',
   top: theme.spacing(2),
