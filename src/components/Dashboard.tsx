@@ -25,7 +25,8 @@ const MainContent = styled(Box)(({ theme }) => ({
   flex: 1,
   gap: theme.spacing(2),
   padding: theme.spacing(2),
-  overflow: 'hidden',
+  overflow: 'visible',
+  alignItems: 'flex-start',
 }));
 
 const FeedSection = styled(Box)(({ theme }) => ({
